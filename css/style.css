@@ -341,6 +341,17 @@ th {
     display: block;
 }
 
+/* Enlarge the video when the player is clicked */
+.video-container:focus-within {
+    width: min(90vw, 1000px);
+    max-width: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    z-index: 10;
+    transition: width 0.3s ease;
+}
+
 /* Fallback for browsers without aspect-ratio support */
 @supports not (aspect-ratio: 16 / 9) {
     .video-container {
