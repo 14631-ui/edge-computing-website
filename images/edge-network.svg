@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390">
+  <title>Edge computing network diagram</title>
+  <desc>
+    Devices send data to a nearby edge computer, which communicates with cloud
+    services.
+  </desc>
+
+  <rect width="900" height="390" rx="24" fill="#f7fbff" />
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect
+      x="45"
+      y="110"
+      width="205"
+      height="170"
+      rx="18"
+      fill="#e4f5f3"
+      stroke="#087e8b"
+      stroke-width="4"
+    />
+
+    <circle cx="105" cy="165" r="24" fill="#20b7ad" />
+    <rect x="150" y="143" width="55" height="42" rx="7" fill="#20b7ad" />
+
+    <path
+      d="M92 207h27m-13-13v27M163 207h29"
+      stroke="#087e8b"
+      stroke-width="5"
+      stroke-linecap="round"
+    />
+
+    <text x="147" y="248" font-size="23" font-weight="bold" fill="#14243a">
+      Devices
+    </text>
+    <text x="147" y="270" font-size="14" fill="#53647a">Sensors / cameras</text>
+
+    <path
+      d="M270 195h85m-18-14 18 14-18 14"
+      fill="none"
+      stroke="#52677c"
+      stroke-width="6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <rect
+      x="365"
+      y="110"
+      width="205"
+      height="170"
+      rx="18"
+      fill="#dceafb"
+      stroke="#3976b9"
+      stroke-width="4"
+    />
+
+    <rect x="420" y="145" width="95" height="64" rx="8" fill="#3976b9" />
+    <path d="M435 160h65m-65 15h65m-65 15h45" stroke="#fff" stroke-width="5" />
+
+    <text x="467" y="248" font-size="23" font-weight="bold" fill="#14243a">
+      Edge computer
+    </text>
+    <text x="467" y="270" font-size="14" fill="#53647a">Nearby processing</text>
+
+    <path
+      d="M590 195h85m-18-14 18 14-18 14"
+      fill="none"
+      stroke="#52677c"
+      stroke-width="6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <rect
+      x="685"
+      y="110"
+      width="170"
+      height="170"
+      rx="18"
+      fill="#f1e9ff"
+      stroke="#8263b2"
+      stroke-width="4"
+    />
+
+    <path
+      d="M733 185c-23-3-25-35-2-42 9-25 47-26 59-3
+             25-3 39 28 17 43z"
+      fill="#8263b2"
+    />
+
+    <text x="770" y="248" font-size="23" font-weight="bold" fill="#14243a">
+      Cloud
+    </text>
+    <text x="770" y="270" font-size="14" fill="#53647a">
+      Storage / analysis
+    </text>
+
+    <text x="450" y="60" font-size="26" font-weight="bold" fill="#14243a">
+      A simplified edge computing system
+    </text>
+  </g>
+</svg>
