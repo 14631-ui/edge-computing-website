@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edge Computing | Knowledge Check</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+    <script src="js/quiz.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">EDGE<span>COMPUTING</span></a>
+        <p class="tagline">Computing closer to where data is created</p>
+
+        <nav aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="applications.html">Applications</a>
+          <a class="active" href="quiz.html">Knowledge Check</a>
+          <a href="sources.html">Sources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-content">
+      <p class="eyebrow">TEST YOUR UNDERSTANDING</p>
+      <h1>Knowledge check</h1>
+
+      <p class="lead narrow">
+        Answer all three questions, then check your score. You can reset the
+        quiz and try again.
+      </p>
+
+      <section class="quiz-layout">
+        <form id="quiz-form" class="quiz-form">
+          <fieldset>
+            <legend>1. Where does edge computing process data?</legend>
+
+            <label>
+              <input type="radio" name="q1" value="remote" required />
+              Only in a distant data centre
+            </label>
+
+            <label>
+              <input type="radio" name="q1" value="edge" />
+              Near the device or data source
+            </label>
+
+            <label>
+              <input type="radio" name="q1" value="nowhere" />
+              Data is never processed
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Which is a possible benefit of edge computing?</legend>
+
+            <label>
+              <input type="radio" name="q2" value="delay" required />
+              It always removes every delay
+            </label>
+
+            <label>
+              <input type="radio" name="q2" value="latency" />
+              It can reduce delay for local tasks
+            </label>
+
+            <label>
+              <input type="radio" name="q2" value="internet" />
+              It means networks are no longer needed
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. How can edge and cloud computing work together?</legend>
+
+            <label>
+              <input type="radio" name="q3" value="separate" required />
+              They cannot be used together
+            </label>
+
+            <label>
+              <input type="radio" name="q3" value="edge" />
+              Edge handles local tasks; cloud can store and analyze data
+            </label>
+
+            <label>
+              <input type="radio" name="q3" value="same" />
+              They are exactly the same thing
+            </label>
+          </fieldset>
+
+          <div class="button-row">
+            <button class="button" type="submit">Check my answers</button>
+            <button class="button button-secondary" type="reset">
+              Reset quiz
+            </button>
+          </div>
+
+          <p id="quiz-result" class="result" role="status" aria-live="polite">
+            Your score will appear here.
+          </p>
+        </form>
+
+        <aside class="diagram-panel">
+          <h2>Quick visual recap</h2>
+          <p>
+            This diagram is drawn using the HTML Canvas element and JavaScript.
+          </p>
+
+          <canvas id="edge-canvas" width="520" height="300">
+            Your browser does not support HTML Canvas.
+          </canvas>
+
+          <p class="small-note">
+            Devices send information to a nearby edge computer. Selected
+            information can then be sent to cloud services.
+          </p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>ICS3UZ Summative Website · Edge Computing</p>
+        <p><a href="sources.html">View research sources</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

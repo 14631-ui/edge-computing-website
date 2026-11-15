@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edge Computing | How It Works</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">EDGE<span>COMPUTING</span></a>
+        <p class="tagline">Computing closer to where data is created</p>
+
+        <nav aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a class="active" href="how-it-works.html">How It Works</a>
+          <a href="applications.html">Applications</a>
+          <a href="quiz.html">Knowledge Check</a>
+          <a href="sources.html">Sources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-content">
+      <p class="eyebrow">THE PROCESS</p>
+      <h1>How edge computing works</h1>
+
+      <p class="lead narrow">
+        The main idea is to move some computing tasks closer to the devices and
+        people that need the results.
+      </p>
+
+      <section class="content-section">
+        <img
+          class="wide-diagram"
+          src="images/edge-network.svg"
+          alt="Flow diagram showing devices, an edge computer, and cloud services"
+        />
+
+        <h2>A three-step process</h2>
+
+        <ol class="steps">
+          <li>
+            <strong>Data is created.</strong>
+            A sensor, camera, phone, or machine collects information from its
+            surroundings.
+          </li>
+
+          <li>
+            <strong>Nearby processing takes place.</strong>
+            An edge device or local server analyzes the information and can make
+            a quick decision.
+          </li>
+
+          <li>
+            <strong>Selected information is shared.</strong>
+            Useful results can be sent to cloud servers for storage, reporting,
+            or more complex analysis.
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section">
+        <h2>Watch: What Is Edge Computing?</h2>
+        <p>
+          This video from IBM Technology explains the basic concepts of edge
+          computing and how it is used in real-world situations.
+        </p>
+
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/cEOUeItHDdo?si=8sWCq2gVvl_0YyVM"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p class="small-note">
+          Video: IBM Technology — What is edge computing?
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Edge computing compared with cloud computing</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Edge computing</th>
+                <th>Cloud computing</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Where processing happens</td>
+                <td>Near the data source</td>
+                <td>In remote data centres</td>
+              </tr>
+
+              <tr>
+                <td>Typical strength</td>
+                <td>Quick local responses</td>
+                <td>Large-scale storage and computing</td>
+              </tr>
+
+              <tr>
+                <td>Network use</td>
+                <td>Can reduce data sent elsewhere</td>
+                <td>Often relies on network connections</td>
+              </tr>
+
+              <tr>
+                <td>Best use</td>
+                <td>Time-sensitive local tasks</td>
+                <td>Centralized analysis and coordination</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="small-note">
+          These approaches are often combined. The best choice depends on the
+          task, network, cost, privacy, and reliability requirements.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Benefits and challenges</h2>
+
+        <div class="card-grid two">
+          <article class="info-card">
+            <h3 class="positive">Potential benefits</h3>
+            <ul>
+              <li>Lower delay for some decisions</li>
+              <li>Less data sent over the network</li>
+              <li>Local processing during some connection interruptions</li>
+              <li>More control over where certain data is processed</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3 class="caution">Challenges to manage</h3>
+            <ul>
+              <li>More devices and locations to maintain</li>
+              <li>Security updates across multiple devices</li>
+              <li>Local hardware may have limited power and storage</li>
+              <li>Systems need to coordinate edge and cloud services</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>ICS3UZ Summative Website · Edge Computing</p>
+        <p><a href="sources.html">View research sources</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
