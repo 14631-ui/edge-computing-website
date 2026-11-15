@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <title>Connected devices illustration</title>
+  <desc>A central local network connects a phone, sensor, and computer.</desc>
+
+  <rect width="600" height="300" rx="22" fill="#f7fbff" />
+
+  <g stroke="#20a99f" stroke-width="7" fill="none" stroke-linecap="round">
+    <path d="M300 145L130 80M300 145L470 80M300 145L300 245" />
+  </g>
+
+  <circle
+    cx="300"
+    cy="145"
+    r="55"
+    fill="#dceafb"
+    stroke="#3976b9"
+    stroke-width="5"
+  />
+
+  <rect x="275" y="120" width="50" height="48" rx="6" fill="#3976b9" />
+
+  <path d="M284 132h32m-32 12h32m-32 12h22" stroke="#fff" stroke-width="4" />
+
+  <rect
+    x="75"
+    y="35"
+    width="110"
+    height="90"
+    rx="15"
+    fill="#e4f5f3"
+    stroke="#087e8b"
+    stroke-width="4"
+  />
+
+  <rect x="105" y="48" width="50" height="63" rx="8" fill="#20b7ad" />
+
+  <rect
+    x="415"
+    y="35"
+    width="110"
+    height="90"
+    rx="15"
+    fill="#e4f5f3"
+    stroke="#087e8b"
+    stroke-width="4"
+  />
+
+  <circle cx="470" cy="78" r="22" fill="#20b7ad" />
+
+  <rect
+    x="235"
+    y="220"
+    width="130"
+    height="55"
+    rx="10"
+    fill="#f1e9ff"
+    stroke="#8263b2"
+    stroke-width="4"
+  />
+
+  <path d="M260 237h80m-80 14h55" stroke="#8263b2" stroke-width="5" />
+
+  <g
+    font-family="Arial"
+    font-size="17"
+    font-weight="bold"
+    fill="#14243a"
+    text-anchor="middle"
+  >
+    <text x="130" y="155">Phone</text>
+    <text x="470" y="155">Sensor</text>
+    <text x="300" y="294">Local network</text>
+  </g>
+</svg>
