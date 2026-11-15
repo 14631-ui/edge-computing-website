@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 240">
+  <title>Factory sensor illustration</title>
+  <desc>A factory with connected machines and a sensor signal.</desc>
+
+  <rect width="500" height="240" rx="20" fill="#f7fbff" />
+
+  <path
+    d="M65 190V105l85 45v-45l85 45v-45l85 45V80h80v110z"
+    fill="#dceafb"
+    stroke="#3976b9"
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+
+  <path d="M350 80V35h45v45" fill="#e4f5f3" stroke="#087e8b" stroke-width="5" />
+
+  <g fill="#20b7ad">
+    <rect x="100" y="165" width="35" height="25" />
+    <rect x="175" y="165" width="35" height="25" />
+    <rect x="250" y="165" width="35" height="25" />
+    <rect x="370" y="145" width="35" height="45" />
+  </g>
+
+  <path
+    d="M325 45q25-25 50 0m-42 12q17-17 34 0"
+    fill="none"
+    stroke="#20a99f"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+
+  <text
+    x="250"
+    y="225"
+    font-family="Arial"
+    font-size="16"
+    font-weight="bold"
+    fill="#14243a"
+    text-anchor="middle"
+  >
+    Machines monitored by local computers
+  </text>
+</svg>
