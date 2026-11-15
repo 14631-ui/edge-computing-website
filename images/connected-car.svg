@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 240">
+  <title>Connected vehicle illustration</title>
+  <desc>A car with sensor signals above it.</desc>
+
+  <rect width="500" height="240" rx="20" fill="#f7fbff" />
+
+  <path
+    d="M95 150l30-55c8-15 20-22 40-22h145c19 0 31 8 42 24
+           l38 53 22 10v38H82v-36z"
+    fill="#dceafb"
+    stroke="#3976b9"
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+
+  <path
+    d="M160 82h75v57H130zM250 82h58c13 0 22 6 29 17
+           l27 40H250z"
+    fill="#8dc7dc"
+    stroke="#3976b9"
+    stroke-width="3"
+  />
+
+  <circle cx="155" cy="195" r="24" fill="#263c53" />
+  <circle cx="155" cy="195" r="10" fill="#dceafb" />
+
+  <circle cx="345" cy="195" r="24" fill="#263c53" />
+  <circle cx="345" cy="195" r="10" fill="#dceafb" />
+
+  <g fill="none" stroke="#20a99f" stroke-width="5" stroke-linecap="round">
+    <path d="M250 55c-20-20-20-35 0-50M270 55c20-20 20-35 0-50" />
+  </g>
+
+  <text
+    x="250"
+    y="230"
+    font-family="Arial"
+    font-size="16"
+    font-weight="bold"
+    fill="#14243a"
+    text-anchor="middle"
+  >
+    Local sensor processing
+  </text>
+</svg>
