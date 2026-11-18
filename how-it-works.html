@@ -5,7 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edge Computing | How It Works</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/main.js" defer></script>
+    <script>
+    // Apply the saved theme before the page is displayed.
+  (function () {
+    const savedTheme = localStorage.getItem('themePreference') || 'light';
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const activeTheme = savedTheme === 'system'
+      ? (systemDark ? 'dark' : 'light')
+      : savedTheme;
+
+    document.documentElement.dataset.theme = activeTheme;
+  })();
+
+const loadVideoButton = document.getElementById('load-video');
+
+  loadVideoButton.addEventListener('click', function () {
+    const iframe = document.createElement('iframe');
+
+    iframe.src = 'https://www.youtube.com/embed/cEOUeItHDdo?autoplay=1';
+    iframe.title = 'YouTube video player';
+    iframe.width = '560';
+    iframe.height = '315';
+    iframe.allow =
+      'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.allowFullscreen = true;
+
+    const container = document.getElementById('video-container');
+    container.replaceChildren(iframe);
+  });
+</script>
+<script src="js/main.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -19,6 +49,12 @@
           <a href="applications.html">Applications</a>
           <a href="quiz.html">Knowledge Check</a>
           <a href="sources.html">Sources</a>
+          <label class="theme-label" for="theme-select">Theme:</label>
+  <select id="theme-select" aria-label="Choose colour theme">
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+    <option value="system">System</option>
+  </select>
         </nav>
       </div>
     </header>
@@ -69,26 +105,27 @@
           computing and how it is used in real-world situations.
         </p>
 
-        <div class="video-container">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/cEOUeItHDdo?si=8sWCq2gVvl_0YyVM"
-            title="YouTube video player"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-              web-share;
-            "
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
+      <section class="content-section">
+        <h2>Watch: What Is Edge Computing?</h2>
+        <p>
+          This video from IBM Technology explains the basic concepts of edge
+          computing and how it is used in real-world situations.
+        </p>
+
+        <div class="video-container" id="video-container">
+  <button
+    class="video-placeholder"
+    id="load-video"
+    type="button"
+    aria-label="Play What Is Edge Computing? video"
+  >
+    <img
+      src="https://img.youtube.com/vi/cEOUeItHDdo/hqdefault.jpg"
+      alt="Preview of the IBM Technology video What Is Edge Computing?"
+    />
+    <span class="play-button">Play video</span>
+  </button>
+</div>
 
         <p class="small-note">
           Video: IBM Technology — What is edge computing?
@@ -175,5 +212,27 @@
         <p><a href="sources.html">View research sources</a></p>
       </div>
     </footer>
+    <button
+      id="back-to-top"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      aria-label="Back to top"
+      title="Back to Top"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m3 10 9-7 9 7" />
+        <path d="M5 9v12h14V9" />
+        <path d="M9 21v-7h6v7" />
+      </svg>
+    </button>
   </body>
 </html>
