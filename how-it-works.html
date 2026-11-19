@@ -6,18 +6,19 @@
     <title>Edge Computing | How It Works</title>
     <link rel="stylesheet" href="css/style.css" />
     <script>
-    // Apply the saved theme before the page is displayed.
-  (function () {
-    const savedTheme = localStorage.getItem('themePreference') || 'light';
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const activeTheme = savedTheme === 'system'
-      ? (systemDark ? 'dark' : 'light')
-      : savedTheme;
+      // Apply the saved theme before the page is displayed.
+      ;(function () {
+        const savedTheme = localStorage.getItem('themePreference') || 'light'
+        const systemDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches
+        const activeTheme =
+          savedTheme === 'system' ? (systemDark ? 'dark' : 'light') : savedTheme
 
-    document.documentElement.dataset.theme = activeTheme;
-  })();
-</script>
-<script src="js/main.js" defer></script>
+        document.documentElement.dataset.theme = activeTheme
+      })()
+    </script>
+    <script src="js/main.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -31,29 +32,52 @@
           <a href="applications.html">Applications</a>
           <a href="quiz.html">Knowledge Check</a>
           <a href="sources.html">Sources</a>
-          <div class="theme-controls" role="group" aria-label="Choose colour theme">
-  <button type="button" class="theme-button" data-theme-choice="light"
-    aria-label="Light" title="Light">
-    <span aria-hidden="true">☀</span>
-  </button>
+          <div
+            class="theme-controls"
+            role="group"
+            aria-label="Choose colour theme"
+          >
+            <button
+              type="button"
+              class="theme-button"
+              data-theme-choice="light"
+              aria-label="Light"
+              title="Light"
+            >
+              <span aria-hidden="true">☀</span>
+            </button>
 
-  <button type="button" class="theme-button" data-theme-choice="dark"
-    aria-label="Dark" title="Dark">
-    <span aria-hidden="true">☾</span>
-  </button>
+            <button
+              type="button"
+              class="theme-button"
+              data-theme-choice="dark"
+              aria-label="Dark"
+              title="Dark"
+            >
+              <span aria-hidden="true">☾</span>
+            </button>
 
-  <button type="button" class="theme-button" data-theme-choice="system"
-    aria-label="System" title="System">
-    <span aria-hidden="true">🔲</span>
-  </button>
-</div>
+            <button
+              type="button"
+              class="theme-button"
+              data-theme-choice="system"
+              aria-label="System"
+              title="System"
+            >
+              <span aria-hidden="true">🔲</span>
+            </button>
+          </div>
 
-<select id="theme-select" class="visually-hidden"
-  aria-label="Choose colour theme" tabindex="-1">
-  <option value="light">Light</option>
-  <option value="dark">Dark</option>
-  <option value="system">System</option>
-</select>
+          <select
+            id="theme-select"
+            class="visually-hidden"
+            aria-label="Choose colour theme"
+            tabindex="-1"
+          >
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="system">System</option>
+          </select>
         </nav>
       </div>
     </header>
@@ -97,33 +121,33 @@
         </ol>
       </section>
 
-<section class="content-section">
-  <h2>Watch: What Is Edge Computing?</h2>
+      <section class="content-section">
+        <h2>Watch: What Is Edge Computing?</h2>
 
-  <p>
-    This video from IBM Technology explains the basic concepts of edge
-    computing and how it is used in real-world situations.
-  </p>
+        <p>
+          This video from IBM Technology explains the basic concepts of edge
+          computing and how it is used in real-world situations.
+        </p>
 
-  <div class="video-container" id="video-container">
-    <button
-      class="video-placeholder"
-      id="load-video"
-      type="button"
-      aria-label="Play What Is Edge Computing? video"
-    >
-      <img
-        src="https://img.youtube.com/vi/cEOUeItHDdo/hqdefault.jpg"
-        alt="Preview of the IBM Technology video What Is Edge Computing?"
-      />
-      <span class="play-button">Play video</span>
-    </button>
-  </div>
+        <div class="video-container" id="video-container">
+          <button
+            class="video-placeholder"
+            id="load-video"
+            type="button"
+            aria-label="Play What Is Edge Computing? video"
+          >
+            <img
+              src="https://img.youtube.com/vi/cEOUeItHDdo/hqdefault.jpg"
+              alt="Preview of the IBM Technology video What Is Edge Computing?"
+            />
+            <span class="play-button">Play video</span>
+          </button>
+        </div>
 
-  <p class="small-note">
-    Video: IBM Technology — What is edge computing?
-  </p>
-</section>
+        <p class="small-note">
+          Video: IBM Technology — What is edge computing?
+        </p>
+      </section>
 
       <section class="content-section">
         <h2>Edge computing compared with cloud computing</h2>
@@ -202,13 +226,15 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>ICS3UZ Summative Website · Edge Computing</p>
-        <p><a href="#" id="layout-toggle" class="layout-toggle">Mobile view</a></p>
+        <p>
+          <a href="#" id="layout-toggle" class="layout-toggle">Mobile view</a>
+        </p>
         <p><a href="sources.html">View research sources</a></p>
       </div>
     </footer>
     <button
       id="back-to-top"
-      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
       aria-label="Back to top"
       title="Back to Top"
     >
