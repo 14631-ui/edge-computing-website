@@ -6,16 +6,17 @@
     <title>Edge Computing | Sources</title>
     <link rel="stylesheet" href="css/style.css" />
     <script>
-        // Apply the saved theme before the page is displayed.
-      (function () {
-        const savedTheme = localStorage.getItem('themePreference') || 'light';
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const activeTheme = savedTheme === 'system'
-          ? (systemDark ? 'dark' : 'light')
-          : savedTheme;
+      // Apply the saved theme before the page is displayed.
+      ;(function () {
+        const savedTheme = localStorage.getItem('themePreference') || 'light'
+        const systemDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches
+        const activeTheme =
+          savedTheme === 'system' ? (systemDark ? 'dark' : 'light') : savedTheme
 
-        document.documentElement.dataset.theme = activeTheme;
-      })();
+        document.documentElement.dataset.theme = activeTheme
+      })()
     </script>
     <script src="js/main.js" defer></script>
   </head>
@@ -31,29 +32,52 @@
           <a href="applications.html">Applications</a>
           <a href="quiz.html">Knowledge Check</a>
           <a class="active" href="sources.html">Sources</a>
-          <div class="theme-controls" role="group" aria-label="Choose colour theme">
-  <button type="button" class="theme-button" data-theme-choice="light"
-    aria-label="Light" title="Light">
-    <span aria-hidden="true">☀</span>
-  </button>
+          <div
+            class="theme-controls"
+            role="group"
+            aria-label="Choose colour theme"
+          >
+            <button
+              type="button"
+              class="theme-button"
+              data-theme-choice="light"
+              aria-label="Light"
+              title="Light"
+            >
+              <span aria-hidden="true">☀</span>
+            </button>
 
-  <button type="button" class="theme-button" data-theme-choice="dark"
-    aria-label="Dark" title="Dark">
-    <span aria-hidden="true">☾</span>
-  </button>
+            <button
+              type="button"
+              class="theme-button"
+              data-theme-choice="dark"
+              aria-label="Dark"
+              title="Dark"
+            >
+              <span aria-hidden="true">☾</span>
+            </button>
 
-  <button type="button" class="theme-button" data-theme-choice="system"
-    aria-label="System" title="System">
-    <span aria-hidden="true">🔲</span>
-  </button>
-</div>
+            <button
+              type="button"
+              class="theme-button"
+              data-theme-choice="system"
+              aria-label="System"
+              title="System"
+            >
+              <span aria-hidden="true">🔲</span>
+            </button>
+          </div>
 
-<select id="theme-select" class="visually-hidden"
-  aria-label="Choose colour theme" tabindex="-1">
-  <option value="light">Light</option>
-  <option value="dark">Dark</option>
-  <option value="system">System</option>
-</select>
+          <select
+            id="theme-select"
+            class="visually-hidden"
+            aria-label="Choose colour theme"
+            tabindex="-1"
+          >
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="system">System</option>
+          </select>
         </nav>
       </div>
     </header>
@@ -168,13 +192,15 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>ICS3UZ Summative Website · Edge Computing</p>
-        <p><a href="#" id="layout-toggle" class="layout-toggle">Mobile view</a></p>
+        <p>
+          <a href="#" id="layout-toggle" class="layout-toggle">Mobile view</a>
+        </p>
         <p><a href="index.html">Return to home</a></p>
       </div>
     </footer>
     <button
       id="back-to-top"
-      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
       aria-label="Back to top"
       title="Back to Top"
     >
