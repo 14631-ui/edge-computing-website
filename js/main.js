@@ -127,42 +127,6 @@ if (loadVideoButton) {
   });
 }
 
-// == Navigation scroll behaviour ==
-
-const navigation = document.querySelector('.site-header nav');
-
-if (navigation) {
-  let isFloating = false;
-  let fadeTimer;
-
-  // Preserve the original navigation space.
-  const navPlaceholder = document.createElement('div');
-  navPlaceholder.style.height = navigation.offsetHeight + 'px';
-  navPlaceholder.style.display = 'none';
-
-  navigation.parentNode.insertBefore(navPlaceholder, navigation);
-
-  function updateNavigation() {
-    if (window.scrollY > 150 && !isFloating) {
-      clearTimeout(fadeTimer);
-      isFloating = true;
-
-      navPlaceholder.style.display = 'block';
-
-      navigation.classList.remove('fade-out');
-      navigation.classList.add('scrolled');
-    } else if (window.scrollY <= 150 && isFloating) {
-      isFloating = false;
-
-      navigation.classList.remove('scrolled', 'fade-out');
-      navPlaceholder.style.display = 'none';
-    }
-  }
-
-  window.addEventListener('scroll', updateNavigation);
-  updateNavigation();
-}
-
 // == Back to Top button ==
 
 const backToTop = document.getElementById('back-to-top');
