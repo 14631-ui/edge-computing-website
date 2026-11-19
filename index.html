@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edge Computing | Home</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/main.js" defer>
+    <script>
       // Apply the saved theme before the page is displayed.
         (function () {
           const savedTheme = localStorage.getItem('themePreference') || 'light';
@@ -17,6 +17,7 @@
           document.documentElement.dataset.theme = activeTheme;
         })();
     </script>
+    <script src="js/main.js" defer></script>
   </head>
   <body>
     <!-- Main navigation header -->
@@ -31,12 +32,29 @@
           <a href="applications.html">Applications</a>
           <a href="quiz.html">Knowledge Check</a>
           <a href="sources.html">Sources</a>
-          <label class="theme-label" for="theme-select">Theme:</label>
-          <select id="theme-select" aria-label="Choose colour theme">
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="system">System</option>
-          </select>
+          <div class="theme-controls" role="group" aria-label="Choose colour theme">
+  <button type="button" class="theme-button" data-theme-choice="light"
+    aria-label="Light" title="Light">
+    <span aria-hidden="true">☀</span>
+  </button>
+
+  <button type="button" class="theme-button" data-theme-choice="dark"
+    aria-label="Dark" title="Dark">
+    <span aria-hidden="true">☾</span>
+  </button>
+
+  <button type="button" class="theme-button" data-theme-choice="system"
+    aria-label="System" title="System">
+    <span aria-hidden="true">🔲</span>
+  </button>
+</div>
+
+<select id="theme-select" class="visually-hidden"
+  aria-label="Choose colour theme" tabindex="-1">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="system">System</option>
+</select>
         </nav>
       </div>
     </header>
@@ -143,6 +161,7 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>ICS3UZ Summative Website · Edge Computing</p>
+        <p><a href="#" id="layout-toggle" class="layout-toggle">Mobile view</a></p>
         <p>Created for an introductory computer science project</p>
       </div>
     </footer>
