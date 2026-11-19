@@ -60,7 +60,6 @@ h3 {
   margin: 0 auto;
 }
 
-
 /* Sticky website header and navigation */
 
 .site-header {
@@ -934,7 +933,10 @@ html[data-layout='mobile'] .theme-label {
   color: var(--text-color);
   font-size: 20px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
 }
 
 .theme-button:hover {
