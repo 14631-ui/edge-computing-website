@@ -16,24 +16,6 @@
 
     document.documentElement.dataset.theme = activeTheme;
   })();
-
-const loadVideoButton = document.getElementById('load-video');
-
-  loadVideoButton.addEventListener('click', function () {
-    const iframe = document.createElement('iframe');
-
-    iframe.src = 'https://www.youtube.com/embed/cEOUeItHDdo?autoplay=1';
-    iframe.title = 'YouTube video player';
-    iframe.width = '560';
-    iframe.height = '315';
-    iframe.allow =
-      'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-    iframe.allowFullscreen = true;
-
-    const container = document.getElementById('video-container');
-    container.replaceChildren(iframe);
-  });
 </script>
 <script src="js/main.js" defer></script>
   </head>
@@ -49,12 +31,29 @@ const loadVideoButton = document.getElementById('load-video');
           <a href="applications.html">Applications</a>
           <a href="quiz.html">Knowledge Check</a>
           <a href="sources.html">Sources</a>
-          <label class="theme-label" for="theme-select">Theme:</label>
-  <select id="theme-select" aria-label="Choose colour theme">
-    <option value="light">Light</option>
-    <option value="dark">Dark</option>
-    <option value="system">System</option>
-  </select>
+          <div class="theme-controls" role="group" aria-label="Choose colour theme">
+  <button type="button" class="theme-button" data-theme-choice="light"
+    aria-label="Light" title="Light">
+    <span aria-hidden="true">☀</span>
+  </button>
+
+  <button type="button" class="theme-button" data-theme-choice="dark"
+    aria-label="Dark" title="Dark">
+    <span aria-hidden="true">☾</span>
+  </button>
+
+  <button type="button" class="theme-button" data-theme-choice="system"
+    aria-label="System" title="System">
+    <span aria-hidden="true">🔲</span>
+  </button>
+</div>
+
+<select id="theme-select" class="visually-hidden"
+  aria-label="Choose colour theme" tabindex="-1">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="system">System</option>
+</select>
         </nav>
       </div>
     </header>
@@ -98,39 +97,33 @@ const loadVideoButton = document.getElementById('load-video');
         </ol>
       </section>
 
-      <section class="content-section">
-        <h2>Watch: What Is Edge Computing?</h2>
-        <p>
-          This video from IBM Technology explains the basic concepts of edge
-          computing and how it is used in real-world situations.
-        </p>
+<section class="content-section">
+  <h2>Watch: What Is Edge Computing?</h2>
 
-      <section class="content-section">
-        <h2>Watch: What Is Edge Computing?</h2>
-        <p>
-          This video from IBM Technology explains the basic concepts of edge
-          computing and how it is used in real-world situations.
-        </p>
+  <p>
+    This video from IBM Technology explains the basic concepts of edge
+    computing and how it is used in real-world situations.
+  </p>
 
-        <div class="video-container" id="video-container">
-  <button
-    class="video-placeholder"
-    id="load-video"
-    type="button"
-    aria-label="Play What Is Edge Computing? video"
-  >
-    <img
-      src="https://img.youtube.com/vi/cEOUeItHDdo/hqdefault.jpg"
-      alt="Preview of the IBM Technology video What Is Edge Computing?"
-    />
-    <span class="play-button">Play video</span>
-  </button>
-</div>
+  <div class="video-container" id="video-container">
+    <button
+      class="video-placeholder"
+      id="load-video"
+      type="button"
+      aria-label="Play What Is Edge Computing? video"
+    >
+      <img
+        src="https://img.youtube.com/vi/cEOUeItHDdo/hqdefault.jpg"
+        alt="Preview of the IBM Technology video What Is Edge Computing?"
+      />
+      <span class="play-button">Play video</span>
+    </button>
+  </div>
 
-        <p class="small-note">
-          Video: IBM Technology — What is edge computing?
-        </p>
-      </section>
+  <p class="small-note">
+    Video: IBM Technology — What is edge computing?
+  </p>
+</section>
 
       <section class="content-section">
         <h2>Edge computing compared with cloud computing</h2>
@@ -209,6 +202,7 @@ const loadVideoButton = document.getElementById('load-video');
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>ICS3UZ Summative Website · Edge Computing</p>
+        <p><a href="#" id="layout-toggle" class="layout-toggle">Mobile view</a></p>
         <p><a href="sources.html">View research sources</a></p>
       </div>
     </footer>
