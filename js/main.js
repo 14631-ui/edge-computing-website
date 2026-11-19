@@ -98,6 +98,18 @@ mobileScreen.addEventListener('change', function () {
   }
 });
 
+// Reapply saved layout when returning through browser history
+window.addEventListener('pageshow', function () {
+  const storedLayout = localStorage.getItem(layoutPreferenceKey);
+
+  savedLayout =
+    storedLayout === 'mobile' || storedLayout === 'desktop'
+      ? storedLayout
+      : null;
+
+  applyLayout(savedLayout);
+});
+
 // == YouTube video click-to-load ==
 
 const loadVideoButton = document.getElementById('load-video');
