@@ -98,8 +98,26 @@ mobileScreen.addEventListener('change', function () {
   }
 });
 
-// Reapply saved layout when returning through browser history
+// Reapply saved theme and layout when returning through browser history
 window.addEventListener('pageshow', function () {
+  // Restore the saved theme
+  const storedTheme = localStorage.getItem(themePreferenceKey);
+
+  savedTheme =
+    storedTheme === 'light' ||
+    storedTheme === 'dark' ||
+    storedTheme === 'system'
+      ? storedTheme
+      : 'light';
+
+  if (themeSelect) {
+    themeSelect.value = savedTheme;
+    themeSelect.dispatchEvent(new Event('change'));
+  } else {
+    applyTheme(savedTheme);
+  }
+
+  // Restore the saved layout
   const storedLayout = localStorage.getItem(layoutPreferenceKey);
 
   savedLayout =
