@@ -761,6 +761,14 @@ html[data-theme='dark'] .hero-image {
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
 }
 
+html[data-theme='dark'] .brand {
+  color: #ffffff;
+}
+
+html[data-theme='dark'] .brand span {
+  color: #42d6c6;
+}
+
 /* Improve readability on smaller screens. */
 @media (max-width: 760px) {
   .theme-label {
