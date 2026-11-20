@@ -165,9 +165,11 @@ if (backToTop) {
     if (window.scrollY > 75) {
       backToTop.style.opacity = '1';
       backToTop.style.pointerEvents = 'auto';
+      backToTop.disabled = false;
     } else {
       backToTop.style.opacity = '0';
       backToTop.style.pointerEvents = 'none';
+      backToTop.disabled = true;
     }
   }
 
