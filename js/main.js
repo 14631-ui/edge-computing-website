@@ -136,7 +136,7 @@ if (loadVideoButton) {
   loadVideoButton.addEventListener('click', function () {
     const iframe = document.createElement('iframe');
 
-    iframe.src = 'https://www.youtube.com/embed/cEOUeItHDdo?autoplay=1&rel=0';
+    iframe.src = 'https://www.youtube.com/embed/cEOUeItHDdo?autoplay=1&controls=1&rel=0';
 
     iframe.title = 'IBM Technology: What Is Edge Computing?';
     iframe.width = '560';
