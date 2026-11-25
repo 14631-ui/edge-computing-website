@@ -1,7 +1,11 @@
 // JavaScript for the interactive quiz and Canvas diagram.
 
 // Store the correct answers in an array.
-var correctAnswers = ["edge", "latency", "edge"];\n\nfunction quizText(key) {\n  return window.siteTranslate ? window.siteTranslate(key) : key;\n}
+var correctAnswers = ["edge", "latency", "edge"];
+
+function quizText(key) {
+  return window.siteTranslate ? window.siteTranslate(key) : key;
+}
 
 // Find the quiz form and result area in the HTML document.
 var quizForm = document.querySelector("#quiz-form");
@@ -59,7 +63,8 @@ quizForm.addEventListener("submit", function (event) {
 
 // Clear the score message when the reset button is used.
 quizForm.addEventListener("reset", function () {
-  quizResult.dataset.hasResult = "";\n  quizResult.textContent = quizText("Your score will appear here.");
+  quizResult.dataset.hasResult = "";
+  quizResult.textContent = quizText("Your score will appear here.");
 });
 
 // Draw a process diagram using the HTML Canvas 2D drawing tools.
@@ -175,4 +180,9 @@ function drawArrow(ctx, startX, startY, endX, endY) {
 
 // Draw the diagram after the page elements have loaded.
 drawEdgeDiagram();
-\n\ndocument.addEventListener("siteLanguageChanged", function () {\n  drawEdgeDiagram();\n  if (quizResult && !quizResult.dataset.hasResult) quizResult.textContent = quizText("Your score will appear here.");\n});\n
+
+
+document.addEventListener("siteLanguageChanged", function () {
+  drawEdgeDiagram();
+  if (quizResult && !quizResult.dataset.hasResult) quizResult.textContent = quizText("Your score will appear here.");
+});
