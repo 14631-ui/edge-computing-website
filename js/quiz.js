@@ -47,17 +47,14 @@ quizForm.addEventListener("submit", function (event) {
       quizText("Excellent! You scored") + " " + score + " " + quizText("out of") + " " + numberOfQuestions + ".";
   } else if (score > 0) {
     quizResult.textContent =
-      "You scored " +
-      score +
-      " out of " +
-      numberOfQuestions +
-      ". Review the pages and try again.";
+      quizText("You scored") + " " + score + " " + quizText("out of") + " " +
+      numberOfQuestions + ". " + quizText("Review the pages and try again.");
   } else {
     quizResult.textContent =
-      "You scored 0 out of " +
-      numberOfQuestions +
-      ". Try the quiz again after reviewing the website.";
+      quizText("You scored") + " 0 " + quizText("out of") + " " +
+      numberOfQuestions + ". " + quizText("Try the quiz again after reviewing the website.");
   }
+  quizResult.dataset.hasResult = "true";
 });
 
 // Clear the score message when the reset button is used.
