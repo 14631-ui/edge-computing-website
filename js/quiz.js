@@ -3,10 +3,6 @@
 // Store the correct answers in an array.
 var correctAnswers = ["edge", "latency", "edge"];
 
-function quizText(key) {
-  return window.siteTranslate ? window.siteTranslate(key) : key;
-}
-
 // Find the quiz form and result area in the HTML document.
 var quizForm = document.querySelector("#quiz-form");
 var quizResult = document.querySelector("#quiz-result");
@@ -25,7 +21,7 @@ quizForm.addEventListener("submit", function (event) {
     !document.querySelector('input[name="q2"]:checked') ||
     !document.querySelector('input[name="q3"]:checked')
   ) {
-    alert(quizText("Please answer all three questions before checking your score."));
+    alert("Please answer all three questions before checking your score.");
     return;
   }
 
@@ -48,30 +44,30 @@ quizForm.addEventListener("submit", function (event) {
   // Display a message based on the student's score.
   if (score === numberOfQuestions) {
     quizResult.textContent =
-      quizText("Excellent! You scored") + " " + score + " " + quizText("out of") + " " + numberOfQuestions + ".";
+      "Excellent! You scored " + score + " out of " + numberOfQuestions + ".";
   } else if (score > 0) {
     quizResult.textContent =
-      quizText("You scored") + " " + score + " " + quizText("out of") + " " +
-      numberOfQuestions + ". " + quizText("Review the pages and try again.");
+      "You scored " +
+      score +
+      " out of " +
+      numberOfQuestions +
+      ". Review the pages and try again.";
   } else {
     quizResult.textContent =
-      quizText("You scored") + " 0 " + quizText("out of") + " " +
-      numberOfQuestions + ". " + quizText("Try the quiz again after reviewing the website.");
+      "You scored 0 out of " +
+      numberOfQuestions +
+      ". Try the quiz again after reviewing the website.";
   }
-  quizResult.dataset.hasResult = "true";
 });
 
 // Clear the score message when the reset button is used.
 quizForm.addEventListener("reset", function () {
-  quizResult.dataset.hasResult = "";
-  quizResult.textContent = quizText("Your score will appear here.");
+  quizResult.textContent = "Your score will appear here.";
 });
 
 // Draw a process diagram using the HTML Canvas 2D drawing tools.
 
 function drawEdgeDiagram() {
-  const t = window.siteTranslate || function (value) { return value; };
-
   var canvas = document.querySelector("#edge-canvas");
 
   // Check that the Canvas element exists.
@@ -109,19 +105,19 @@ function drawEdgeDiagram() {
   context.font = "bold 17px Arial";
   context.textAlign = "center";
 
-  context.fillText(t("Devices"), 85, 140);
+  context.fillText("Devices", 85, 140);
   context.font = "14px Arial";
-  context.fillText(t("Sensors / cameras"), 85, 165);
+  context.fillText("Sensors / cameras", 85, 165);
 
   context.font = "bold 17px Arial";
-  context.fillText(t("Edge"), 260, 140);
+  context.fillText("Edge", 260, 140);
   context.font = "14px Arial";
-  context.fillText(t("Local processing"), 260, 165);
+  context.fillText("Local processing", 260, 165);
 
   context.font = "bold 17px Arial";
-  context.fillText(t("Cloud"), 436, 140);
+  context.fillText("Cloud", 436, 140);
   context.font = "14px Arial";
-  context.fillText(t("Storage / analysis"), 436, 165);
+  context.fillText("Storage / analysis", 436, 165);
 
   // Draw arrows between the boxes.
   context.strokeStyle = "#52677c";
@@ -135,13 +131,13 @@ function drawEdgeDiagram() {
   context.fillStyle = "#14243a";
   context.font = "bold 19px Arial";
 
-  context.fillText(t("A simplified edge computing system"), 260, 43);
+  context.fillText("A simplified edge computing system", 260, 43);
 
   context.font = "13px Arial";
   context.fillStyle = "#53647a";
 
   context.fillText(
-    t("Some data is processed near where it is created."),
+    "Some data is processed near where it is created.",
     260,
     245,
   );
@@ -180,9 +176,3 @@ function drawArrow(ctx, startX, startY, endX, endY) {
 
 // Draw the diagram after the page elements have loaded.
 drawEdgeDiagram();
-
-
-document.addEventListener("siteLanguageChanged", function () {
-  drawEdgeDiagram();
-  if (quizResult && !quizResult.dataset.hasResult) quizResult.textContent = quizText("Your score will appear here.");
-});
