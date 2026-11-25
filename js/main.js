@@ -207,3 +207,16 @@ if (backToTop) {
 
   updateButtons();
 })();
+
+
+// == Multilingual support ==
+// Load the shared language module from GitHub Pages. This also works in JSFiddle,
+// where the five HTML fragments already load this shared main.js file.
+(function () {
+  if (document.querySelector('script[data-language-module]')) return;
+  const languageScript = document.createElement('script');
+  languageScript.src = 'https://14631-ui.github.io/edge-computing-website/js/language.js';
+  languageScript.dataset.languageModule = 'true';
+  languageScript.defer = true;
+  document.head.appendChild(languageScript);
+})();
