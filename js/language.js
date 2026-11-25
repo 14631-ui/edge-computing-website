@@ -10,6 +10,9 @@
 
   // Each entry contains French, Spanish, and Simplified Chinese translations.
   const rows = {
+    "Language":["Langue","Idioma","语言"],
+    "Choose language":["Choisir la langue","Elegir idioma","选择语言"],
+    "You scored":["Vous avez obtenu","Obtuviste","你的得分是"],
     "Home":["Accueil","Inicio","首页"],
     "How It Works":["Fonctionnement","Cómo funciona","工作原理"],
     "Applications":["Applications","Aplicaciones","应用"],
@@ -192,6 +195,7 @@
 
     const title = document.querySelector("title");
     if (title) {
+      if (!title.dataset.englishTitle) title.dataset.englishTitle = title.textContent;
       const titles = {
         "Edge Computing | Home": ["Informatique en périphérie | Accueil","Computación en el borde | Inicio","边缘计算 | 首页"],
         "Edge Computing | How It Works": ["Informatique en périphérie | Fonctionnement","Computación en el borde | Cómo funciona","边缘计算 | 工作原理"],
@@ -212,10 +216,10 @@
     const wrapper = document.createElement("label");
     wrapper.className = "language-control";
     wrapper.setAttribute("for", "language-select");
-    wrapper.textContent = "Language ";
+    wrapper.textContent = translate("Language", currentLanguage()) + " ";
     const select = document.createElement("select");
     select.id = "language-select";
-    select.setAttribute("aria-label", "Choose language");
+    select.setAttribute("aria-label", translate("Choose language", currentLanguage()));
     Object.entries(languages).forEach(([value, label]) => {
       const option = document.createElement("option");
       option.value = value;
@@ -225,6 +229,8 @@
     select.value = currentLanguage();
     select.addEventListener("change", () => {
       localStorage.setItem("siteLanguage", select.value);
+      wrapper.firstChild.textContent = translate("Language", select.value) + " ";
+      select.setAttribute("aria-label", translate("Choose language", select.value));
       translateDocument(select.value);
     });
     wrapper.appendChild(select);
