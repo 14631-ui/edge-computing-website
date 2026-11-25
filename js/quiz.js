@@ -1,7 +1,7 @@
 // JavaScript for the interactive quiz and Canvas diagram.
 
 // Store the correct answers in an array.
-var correctAnswers = ["edge", "latency", "edge"];
+var correctAnswers = ["edge", "latency", "edge"];\n\nfunction quizText(key) {\n  return window.siteTranslate ? window.siteTranslate(key) : key;\n}
 
 // Find the quiz form and result area in the HTML document.
 var quizForm = document.querySelector("#quiz-form");
@@ -21,7 +21,7 @@ quizForm.addEventListener("submit", function (event) {
     !document.querySelector('input[name="q2"]:checked') ||
     !document.querySelector('input[name="q3"]:checked')
   ) {
-    alert("Please answer all three questions before checking your score.");
+    alert(quizText("Please answer all three questions before checking your score."));
     return;
   }
 
@@ -44,7 +44,7 @@ quizForm.addEventListener("submit", function (event) {
   // Display a message based on the student's score.
   if (score === numberOfQuestions) {
     quizResult.textContent =
-      "Excellent! You scored " + score + " out of " + numberOfQuestions + ".";
+      quizText("Excellent! You scored") + " " + score + " " + quizText("out of") + " " + numberOfQuestions + ".";
   } else if (score > 0) {
     quizResult.textContent =
       "You scored " +
@@ -62,12 +62,14 @@ quizForm.addEventListener("submit", function (event) {
 
 // Clear the score message when the reset button is used.
 quizForm.addEventListener("reset", function () {
-  quizResult.textContent = "Your score will appear here.";
+  quizResult.dataset.hasResult = "";\n  quizResult.textContent = quizText("Your score will appear here.");
 });
 
 // Draw a process diagram using the HTML Canvas 2D drawing tools.
 
 function drawEdgeDiagram() {
+  const t = window.siteTranslate || function (value) { return value; };
+
   var canvas = document.querySelector("#edge-canvas");
 
   // Check that the Canvas element exists.
@@ -105,19 +107,19 @@ function drawEdgeDiagram() {
   context.font = "bold 17px Arial";
   context.textAlign = "center";
 
-  context.fillText("Devices", 85, 140);
+  context.fillText(t("Devices"), 85, 140);
   context.font = "14px Arial";
-  context.fillText("Sensors / cameras", 85, 165);
+  context.fillText(t("Sensors / cameras"), 85, 165);
 
   context.font = "bold 17px Arial";
-  context.fillText("Edge", 260, 140);
+  context.fillText(t("Edge"), 260, 140);
   context.font = "14px Arial";
-  context.fillText("Local processing", 260, 165);
+  context.fillText(t("Local processing"), 260, 165);
 
   context.font = "bold 17px Arial";
-  context.fillText("Cloud", 436, 140);
+  context.fillText(t("Cloud"), 436, 140);
   context.font = "14px Arial";
-  context.fillText("Storage / analysis", 436, 165);
+  context.fillText(t("Storage / analysis"), 436, 165);
 
   // Draw arrows between the boxes.
   context.strokeStyle = "#52677c";
@@ -131,13 +133,13 @@ function drawEdgeDiagram() {
   context.fillStyle = "#14243a";
   context.font = "bold 19px Arial";
 
-  context.fillText("A simplified edge computing system", 260, 43);
+  context.fillText(t("A simplified edge computing system"), 260, 43);
 
   context.font = "13px Arial";
   context.fillStyle = "#53647a";
 
   context.fillText(
-    "Some data is processed near where it is created.",
+    t("Some data is processed near where it is created."),
     260,
     245,
   );
@@ -176,3 +178,4 @@ function drawArrow(ctx, startX, startY, endX, endY) {
 
 // Draw the diagram after the page elements have loaded.
 drawEdgeDiagram();
+\n\ndocument.addEventListener("siteLanguageChanged", function () {\n  drawEdgeDiagram();\n  if (quizResult && !quizResult.dataset.hasResult) quizResult.textContent = quizText("Your score will appear here.");\n});\n
