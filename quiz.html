@@ -22,6 +22,7 @@
     <script src="js/quiz.js" defer></script>
   </head>
   <body>
+    <!-- Shared site header and navigation -->
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="index.html">EDGE<span>COMPUTING</span></a>
@@ -33,6 +34,7 @@
           <a href="applications.html">Applications</a>
           <a class="active" aria-current="page" href="quiz.html">Knowledge Check</a>
           <a href="sources.html">Sources</a>
+          <!-- Theme selection controls -->
           <div
             class="theme-controls"
             role="group"
@@ -83,6 +85,7 @@
       </div>
     </header>
 
+    <!-- Main content: interactive knowledge check and Canvas diagram -->
     <main class="container page-content">
       <p class="eyebrow">TEST YOUR UNDERSTANDING</p>
       <h1>Knowledge check</h1>
@@ -92,7 +95,9 @@
         quiz and try again.
       </p>
 
+      <!-- Quiz form and visual recap are displayed side by side -->
       <section class="quiz-layout">
+        <!-- Multiple-choice questions, answer checking, and reset controls -->
         <form id="quiz-form" class="quiz-form">
           <fieldset>
             <legend>1. Where does edge computing process data?</legend>
@@ -163,6 +168,7 @@
           </p>
         </form>
 
+        <!-- Canvas illustration explaining the edge-to-cloud data flow -->
         <aside class="diagram-panel">
           <h2>Quick visual recap</h2>
           <p>
@@ -181,6 +187,7 @@
       </section>
     </main>
 
+    <!-- Shared site footer and page links -->
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>ICS3UZ Summative Website · Edge Computing</p>
@@ -190,6 +197,7 @@
         <p><a href="sources.html">View research sources</a></p>
       </div>
     </footer>
+    <!-- Back-to-top button -->
     <button
       id="back-to-top"
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
