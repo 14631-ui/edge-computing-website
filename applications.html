@@ -20,6 +20,7 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
+    <!-- Shared site header and navigation -->
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="index.html">EDGE<span>COMPUTING</span></a>
@@ -31,6 +32,7 @@
           <a class="active" aria-current="page" href="applications.html">Applications</a>
           <a href="quiz.html">Knowledge Check</a>
           <a href="sources.html">Sources</a>
+          <!-- Theme selection controls -->
           <div
             class="theme-controls"
             role="group"
@@ -81,6 +83,7 @@
       </div>
     </header>
 
+    <!-- Main content: examples of edge computing in everyday life -->
     <main class="container page-content">
       <p class="eyebrow">WHERE IT IS USED</p>
       <h1>Edge computing in everyday life</h1>
@@ -90,7 +93,9 @@
         operation, or reduced network traffic is useful.
       </p>
 
+      <!-- Application examples grouped by industry and use case -->
       <section class="application-list">
+        <!-- Transportation: connected vehicles -->
         <article class="application-item">
           <img
             src="images/connected-car.svg"
@@ -109,6 +114,7 @@
           </div>
         </article>
 
+        <!-- Manufacturing: smart factory monitoring -->
         <article class="application-item">
           <img
             src="images/factory-sensors.svg"
@@ -126,6 +132,7 @@
           </div>
         </article>
 
+        <!-- Health and buildings: connected monitoring systems -->
         <article class="application-item">
           <img
             src="images/connected-devices.svg"
@@ -144,6 +151,7 @@
         </article>
       </section>
 
+      <!-- Important considerations for real-world edge deployments -->
       <section class="content-section callout">
         <h2>Important consideration</h2>
         <p>
@@ -155,6 +163,7 @@
       </section>
     </main>
 
+    <!-- Shared site footer and page links -->
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>ICS3UZ Summative Website · Edge Computing</p>
@@ -164,6 +173,7 @@
         <p><a href="sources.html">View research sources</a></p>
       </div>
     </footer>
+    <!-- Back-to-top button -->
     <button
       id="back-to-top"
       onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
