@@ -1,6 +1,6 @@
 /* ==Shared stylesheet for all five HTML pages.== */
 
-/* Element selectors set the default page appearance. */
+/* Base reset and default page styles: box sizing, scrolling, body, images, and links. */
 
 * {
   box-sizing: border-box;
@@ -31,6 +31,7 @@ a:hover {
   color: #07545c;
 }
 
+/* Shared heading typography and individual heading sizes. */
 h1,
 h2,
 h3 {
@@ -53,7 +54,7 @@ h3 {
   margin-bottom: 8px;
 }
 
-/* Reusable layout and design classes. */
+/* Reusable page-width container and shared layout helpers. */
 
 .container {
   width: min(1120px, 92%);
@@ -142,6 +143,7 @@ nav a.active {
   background: #42d6c6;
 }
 
+/* Home-page hero layout, introductory text, and supporting image. */
 .hero {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -156,6 +158,7 @@ nav a.active {
   box-shadow: 0 16px 36px rgba(16, 36, 58, 0.12);
 }
 
+/* Small uppercase label used above major page headings. */
 .eyebrow {
   margin: 0 0 12px;
   color: #087e8b;
@@ -175,6 +178,7 @@ nav a.active {
   max-width: 760px;
 }
 
+/* Primary and secondary link/button appearance and hover feedback. */
 .button {
   display: inline-block;
   padding: 12px 20px;
@@ -207,10 +211,12 @@ nav a.active {
   color: #10243a;
 }
 
+/* Vertical spacing for the main content sections. */
 .content-section {
   margin: 30px 0 52px;
 }
 
+/* Highlighted example or important explanatory note. */
 .callout {
   padding: 22px 25px;
   background: #e4f5f3;
@@ -222,6 +228,7 @@ nav a.active {
   margin-bottom: 10px;
 }
 
+/* Responsive grids and reusable information cards. */
 .card-grid {
   display: grid;
   gap: 18px;
@@ -255,6 +262,7 @@ nav a.active {
   letter-spacing: 1px;
 }
 
+/* Two-column content layout used for text beside an illustration. */
 .split-section {
   display: grid;
   grid-template-columns: 1fr 0.8fr;
@@ -300,6 +308,7 @@ nav a.active {
 
 /* General page content. */
 
+/* Shared top spacing for interior pages. */
 .page-content {
   padding-top: 55px;
 }
@@ -311,6 +320,7 @@ nav a.active {
   border-radius: 14px;
 }
 
+/* Numbered instructional steps and comparison-table styling. */
 .steps {
   padding-left: 25px;
 }
@@ -343,6 +353,7 @@ th {
   color: #143b48;
 }
 
+/* Supporting text and status colours used throughout interior pages. */
 .small-note {
   color: #637286;
   font-size: 0.88rem;
@@ -430,6 +441,7 @@ th {
 
 /* Application page. */
 
+/* Application-page list and individual application feature rows. */
 .application-list {
   display: grid;
   gap: 22px;
@@ -463,6 +475,7 @@ th {
 
 /* Quiz page. */
 
+/* Quiz two-column layout, question form, answer controls, and result area. */
 .quiz-layout {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -530,6 +543,7 @@ input[type='radio'] {
 
 /* Sources page. */
 
+/* Sources-page citation list and readable code snippets. */
 .source-list li {
   margin-bottom: 17px;
 }
@@ -545,6 +559,7 @@ code {
 }
 
 /* Subtle floating home button */
+/* Fixed back-to-top control; JavaScript controls its visibility. */
 #back-to-top {
   position: fixed;
   bottom: 25px;
@@ -639,6 +654,7 @@ code {
 }
 
 /* == Dark theme == */
+/* Overrides the light-theme colours while preserving the same layouts. */
 
 html[data-theme='dark'] body {
   background: #111b29;
@@ -777,6 +793,7 @@ html[data-theme='dark'] .brand span {
 }
 
 /* == Manual Desktop / Mobile layout selection == */
+/* These data-layout rules let the visitor preview either layout on demand. */
 
 /* Footer layout toggle link */
 .layout-toggle {
@@ -891,7 +908,7 @@ html[data-layout='mobile'] .theme-label {
   }
 }
 
-/* Theme icon controls */
+/* Theme icon controls: compact buttons, selected state, and keyboard focus. */
 .theme-controls {
   display: flex;
   align-items: center;
@@ -957,7 +974,7 @@ html[data-layout='mobile'] .theme-label {
   }
 }
 
-/* Responsive sticky header */
+/* Responsive sticky header: stacks branding and navigation on narrow screens. */
 
 @media (max-width: 760px) {
   .header-inner {
